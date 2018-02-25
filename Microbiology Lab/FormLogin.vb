@@ -15,7 +15,10 @@
         ElseIf Not user.password = TxtPassword.Text Then
             GoTo erorr
         Else
-            MsgBox("Success")
+            AppMain.User = user
+            Dim frm As New FormMain
+            frm.Show()
+            Me.Close()
             Exit Sub
         End If
 erorr:
