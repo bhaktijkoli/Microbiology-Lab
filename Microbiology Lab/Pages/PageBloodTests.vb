@@ -1,4 +1,4 @@
-﻿Public Class PageSamples
+﻿Public Class PageBloodTests
 
     Dim Loader As DialogLoading
     Public Sub New()
@@ -28,7 +28,7 @@
 
 
     Private Sub doLoad()
-        For Each a As Sample In Database.Samples
+        For Each a As BloodTest In Database.BloodTests
             ListItems.Invoke(Sub()
                                  Dim row = ListItems.Rows(ListItems.Rows.Add())
                                  row.Cells("col_no").Value = ListItems.RowCount
@@ -41,12 +41,12 @@
     End Sub
 
     Private Sub CmdAdd_Click(sender As Object, e As EventArgs) Handles CmdAdd.Click
-        Dim val = InputBox("Enter name of the sample.", Me.ParentForm.Text, "")
+        Dim val = InputBox("Enter name of the test.", Me.ParentForm.Text, "")
         If val.Length > 0 Then
-            Dim a As New Sample
-            a.id = Database.Samples.Count
+            Dim a As New BloodTest
+            a.id = Database.BloodTests.Count
             a.name = val
-            Database.Samples.Add(a)
+            Database.BloodTests.Add(a)
             Database.SaveChanges()
             AppMain.EventSettings()
         End If
@@ -54,29 +54,30 @@
 
     Private Sub CmdImport_Click(sender As Object, e As EventArgs) Handles CmdImport.Click
         Try
-            AppMain.Database.Database.ExecuteSqlCommand("delete from Samples")
-            Dim file As String = My.Computer.FileSystem.CurrentDirectory + "/Resources/Samples.txt"
+            AppMain.Database.Database.ExecuteSqlCommand("delete from BloodTests")
+            Dim file As String = My.Computer.FileSystem.CurrentDirectory + "/Resources/BloodTests.txt"
             Dim Items As String() = My.Computer.FileSystem.ReadAllText(file).Split(vbNewLine)
             For Each i As String In Items
                 If i.Length > 0 Then
-                    Dim a As New Sample With {.id = Database.Samples.Count, .name = i}
-                    Database.Samples.Add(a)
+                    Dim a As New BloodTest With {.id = Database.BloodTests.Count, .name = i}
+                    Database.BloodTests.Add(a)
                 End If
             Next
             Database.SaveChanges()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-        MessageBox.Show("Samples Imported!", Me.ParentForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show("Blood Tests Imported!", Me.ParentForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
         AppMain.EventSettings()
     End Sub
 
     Private Sub ListItems_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ListItems.CellContentClick
         If ListItems.Columns("col_remove").Index = e.ColumnIndex Then
-            Dim a As Sample = ListItems.Rows(e.RowIndex).Tag
-            Database.Samples.Remove(a)
+            Dim a As BloodTest = ListItems.Rows(e.RowIndex).Tag
+            Database.BloodTests.Remove(a)
             Database.SaveChanges()
             AppMain.EventSettings()
         End If
     End Sub
+
 End Class
