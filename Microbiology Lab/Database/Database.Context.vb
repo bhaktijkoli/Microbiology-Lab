@@ -23,5 +23,6 @@ Partial Public Class DatabaseEntities
     End Sub
 
     Public Overridable Property Users() As DbSet(Of User)
+    Public Overridable Property Samples() As DbSet(Of Sample)
 
 End Class

@@ -147,8 +147,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
+    <Compile Include="Database\Sample.vb">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database\User.vb">
       <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DialogLoading.Designer.vb">
+      <DependentUpon>DialogLoading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DialogLoading.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormGettingStarted.Designer.vb">
       <DependentUpon>FormGettingStarted.vb</DependentUpon>
@@ -192,8 +201,17 @@
     <Compile Include="Pages\PageRegister.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Pages\PageSamples.Designer.vb">
+      <DependentUpon>PageSamples.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageSamples.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Dialogs\DialogLoading.resx">
+      <DependentUpon>DialogLoading.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGettingStarted.resx">
       <DependentUpon>FormGettingStarted.vb</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\PageRegister.resx">
       <DependentUpon>PageRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PageSamples.resx">
+      <DependentUpon>PageSamples.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -247,6 +268,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Database.edmx</DependentUpon>
       <LastGenOutput>Database.vb</LastGenOutput>
+    </Content>
+    <Content Include="Resources\Samples.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

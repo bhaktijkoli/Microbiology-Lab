@@ -1,0 +1,9 @@
+﻿Blood
+Urine
+Ascitic fluid
+CL tip
+Drain fluid
+JO line tip
+Pus
+Tissue
+Wound Swab

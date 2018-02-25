@@ -24,13 +24,17 @@ Partial Class FormMain
     Private Sub InitializeComponent()
         Me.NavMain = New ComponentFactory.Krypton.Navigator.KryptonNavigator()
         Me.NavRegister = New ComponentFactory.Krypton.Navigator.KryptonPage()
-        Me.NavList = New ComponentFactory.Krypton.Navigator.KryptonPage()
         Me.PageRegister1 = New Microbiology_Lab.PageRegister()
+        Me.NavList = New ComponentFactory.Krypton.Navigator.KryptonPage()
+        Me.PageSamples = New ComponentFactory.Krypton.Navigator.KryptonPage()
+        Me.PageSamples1 = New Microbiology_Lab.PageSamples()
         CType(Me.NavMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NavMain.SuspendLayout()
         CType(Me.NavRegister, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NavRegister.SuspendLayout()
         CType(Me.NavList, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PageSamples, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PageSamples.SuspendLayout()
         Me.SuspendLayout()
         '
         'NavMain
@@ -46,8 +50,8 @@ Partial Class FormMain
         Me.NavMain.Location = New System.Drawing.Point(0, 0)
         Me.NavMain.Name = "NavMain"
         Me.NavMain.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelAlternate
-        Me.NavMain.Pages.AddRange(New ComponentFactory.Krypton.Navigator.KryptonPage() {Me.NavRegister, Me.NavList})
-        Me.NavMain.SelectedIndex = 0
+        Me.NavMain.Pages.AddRange(New ComponentFactory.Krypton.Navigator.KryptonPage() {Me.NavRegister, Me.NavList, Me.PageSamples})
+        Me.NavMain.SelectedIndex = 2
         Me.NavMain.Size = New System.Drawing.Size(784, 562)
         Me.NavMain.TabIndex = 0
         Me.NavMain.Text = "KryptonNavigator1"
@@ -65,6 +69,14 @@ Partial Class FormMain
         Me.NavRegister.ToolTipTitle = "Page ToolTip"
         Me.NavRegister.UniqueName = "091DBF10C75F45C3F5BA4035A4312A5E"
         '
+        'PageRegister1
+        '
+        Me.PageRegister1.Location = New System.Drawing.Point(154, 112)
+        Me.PageRegister1.MinimumSize = New System.Drawing.Size(800, 0)
+        Me.PageRegister1.Name = "PageRegister1"
+        Me.PageRegister1.Size = New System.Drawing.Size(800, 543)
+        Me.PageRegister1.TabIndex = 0
+        '
         'NavList
         '
         Me.NavList.AutoHiddenSlideSize = New System.Drawing.Size(200, 200)
@@ -77,13 +89,26 @@ Partial Class FormMain
         Me.NavList.ToolTipTitle = "Page ToolTip"
         Me.NavList.UniqueName = "A230ECA84BA74277CBA34CB632F611BC"
         '
-        'PageRegister1
+        'PageSamples
         '
-        Me.PageRegister1.Location = New System.Drawing.Point(154, 112)
-        Me.PageRegister1.MinimumSize = New System.Drawing.Size(800, 0)
-        Me.PageRegister1.Name = "PageRegister1"
-        Me.PageRegister1.Size = New System.Drawing.Size(800, 543)
-        Me.PageRegister1.TabIndex = 0
+        Me.PageSamples.AutoHiddenSlideSize = New System.Drawing.Size(200, 200)
+        Me.PageSamples.Controls.Add(Me.PageSamples1)
+        Me.PageSamples.Flags = 65534
+        Me.PageSamples.LastVisibleSet = True
+        Me.PageSamples.MinimumSize = New System.Drawing.Size(50, 50)
+        Me.PageSamples.Name = "PageSamples"
+        Me.PageSamples.Size = New System.Drawing.Size(782, 530)
+        Me.PageSamples.Text = "Samples"
+        Me.PageSamples.ToolTipTitle = "Page ToolTip"
+        Me.PageSamples.UniqueName = "B8B2F040313E4ECA6F8A7BF64F7C2A88"
+        '
+        'PageSamples1
+        '
+        Me.PageSamples1.Location = New System.Drawing.Point(215, 100)
+        Me.PageSamples1.MinimumSize = New System.Drawing.Size(800, 0)
+        Me.PageSamples1.Name = "PageSamples1"
+        Me.PageSamples1.Size = New System.Drawing.Size(800, 415)
+        Me.PageSamples1.TabIndex = 0
         '
         'FormMain
         '
@@ -99,6 +124,8 @@ Partial Class FormMain
         CType(Me.NavRegister, System.ComponentModel.ISupportInitialize).EndInit()
         Me.NavRegister.ResumeLayout(False)
         CType(Me.NavList, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PageSamples, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PageSamples.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -107,4 +134,6 @@ Partial Class FormMain
     Friend WithEvents NavRegister As ComponentFactory.Krypton.Navigator.KryptonPage
     Friend WithEvents NavList As ComponentFactory.Krypton.Navigator.KryptonPage
     Friend WithEvents PageRegister1 As PageRegister
+    Friend WithEvents PageSamples As ComponentFactory.Krypton.Navigator.KryptonPage
+    Friend WithEvents PageSamples1 As PageSamples
 End Class
