@@ -59,7 +59,7 @@
             Dim Items As String() = My.Computer.FileSystem.ReadAllText(file).Split(vbNewLine)
             For Each i As String In Items
                 If i.Length > 0 Then
-                    Dim a As New Sample With {.id = Database.Samples.Count, .name = i}
+                    Dim a As New Sample With {.id = Database.Samples.Count, .name = i.ToString.Replace(vbCr, "").Replace(vbLf, "")}
                     Database.Samples.Add(a)
                 End If
             Next

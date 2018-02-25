@@ -14,5 +14,9 @@
 
     Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles Me.Load
         AppMain.EventSettings()
+        If Not AppMain.User.role = 1 Then
+            NavSamples.Visible = False
+            NavBloodTests.Visible = False
+        End If
     End Sub
 End Class

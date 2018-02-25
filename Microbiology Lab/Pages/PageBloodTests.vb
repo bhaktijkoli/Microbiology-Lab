@@ -59,7 +59,7 @@
             Dim Items As String() = My.Computer.FileSystem.ReadAllText(file).Split(vbNewLine)
             For Each i As String In Items
                 If i.Length > 0 Then
-                    Dim a As New BloodTest With {.id = Database.BloodTests.Count, .name = i}
+                    Dim a As New BloodTest With {.id = Database.BloodTests.Count, .name = i.ToString.Replace(vbCr, "").Replace(vbLf, "")}
                     Database.BloodTests.Add(a)
                 End If
             Next
