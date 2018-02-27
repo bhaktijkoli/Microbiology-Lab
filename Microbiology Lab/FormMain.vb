@@ -18,5 +18,6 @@
             NavSamples.Visible = False
             NavBloodTests.Visible = False
         End If
+        NavMain.SelectedPage = NavRegister
     End Sub
 End Class

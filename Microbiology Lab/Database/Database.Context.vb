@@ -25,5 +25,6 @@ Partial Public Class DatabaseEntities
     Public Overridable Property Users() As DbSet(Of User)
     Public Overridable Property Samples() As DbSet(Of Sample)
     Public Overridable Property BloodTests() As DbSet(Of BloodTest)
+    Public Overridable Property Tests() As DbSet(Of Test)
 
 End Class

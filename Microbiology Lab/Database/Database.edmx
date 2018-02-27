@@ -19,6 +19,24 @@
           <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
+        <EntityType Name="Tests">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="reg_no" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="sex" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="age" Type="integer" />
+          <Property Name="address" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="pincode" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="ward" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="unit" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="sample" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="nature" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="created_at" Type="integer" />
+          <Property Name="created_by" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="id" />
@@ -32,6 +50,7 @@
         <EntityContainer Name="DatabaseModelStoreContainer">
           <EntitySet Name="BloodTests" EntityType="Self.BloodTests" store:Type="Tables" />
           <EntitySet Name="Samples" EntityType="Self.Samples" store:Type="Tables" />
+          <EntitySet Name="Tests" EntityType="Self.Tests" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -52,6 +71,7 @@
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="Samples" EntityType="DatabaseModel.Sample" />
           <EntitySet Name="BloodTests" EntityType="DatabaseModel.BloodTest" />
+          <EntitySet Name="Tests" EntityType="DatabaseModel.Test" />
         </EntityContainer>
         <EntityType Name="Sample">
           <Key>
@@ -66,6 +86,24 @@
           </Key>
           <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="reg_no" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="sex" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="age" Type="Int64" />
+          <Property Name="address" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="pincode" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="ward" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="unit" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="sample" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="nature" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="created_at" Type="Int64" />
+          <Property Name="created_by" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -95,6 +133,25 @@
           <EntitySetMapping Name="BloodTests">
             <EntityTypeMapping TypeName="DatabaseModel.BloodTest">
               <MappingFragment StoreEntitySet="BloodTests">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tests">
+            <EntityTypeMapping TypeName="DatabaseModel.Test">
+              <MappingFragment StoreEntitySet="Tests">
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="nature" ColumnName="nature" />
+                <ScalarProperty Name="sample" ColumnName="sample" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="ward" ColumnName="ward" />
+                <ScalarProperty Name="pincode" ColumnName="pincode" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="reg_no" ColumnName="reg_no" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
