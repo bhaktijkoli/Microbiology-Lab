@@ -22,8 +22,11 @@ Partial Class PageRegister
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelBack = New ComponentFactory.Krypton.Toolkit.KryptonPanel()
         Me.GroupRegister = New ComponentFactory.Krypton.Toolkit.KryptonGroupBox()
+        Me.ListTests = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
+        Me.LblTests = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.TxtNature = New ComponentFactory.Krypton.Toolkit.KryptonComboBox()
         Me.LblNature = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.TxtPincode = New ComponentFactory.Krypton.Toolkit.KryptonTextBox()
@@ -46,12 +49,15 @@ Partial Class PageRegister
         Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.col_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_check = New ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn()
         CType(Me.PanelBack, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBack.SuspendLayout()
         CType(Me.GroupRegister, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupRegister.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupRegister.Panel.SuspendLayout()
         Me.GroupRegister.SuspendLayout()
+        CType(Me.ListTests, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtNature, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtSample, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtSex, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,7 +70,7 @@ Partial Class PageRegister
         Me.PanelBack.Location = New System.Drawing.Point(0, 0)
         Me.PanelBack.Name = "PanelBack"
         Me.PanelBack.Padding = New System.Windows.Forms.Padding(10)
-        Me.PanelBack.Size = New System.Drawing.Size(800, 543)
+        Me.PanelBack.Size = New System.Drawing.Size(800, 530)
         Me.PanelBack.TabIndex = 0
         '
         'GroupRegister
@@ -75,6 +81,8 @@ Partial Class PageRegister
         '
         'GroupRegister.Panel
         '
+        Me.GroupRegister.Panel.Controls.Add(Me.ListTests)
+        Me.GroupRegister.Panel.Controls.Add(Me.LblTests)
         Me.GroupRegister.Panel.Controls.Add(Me.TxtNature)
         Me.GroupRegister.Panel.Controls.Add(Me.LblNature)
         Me.GroupRegister.Panel.Controls.Add(Me.TxtPincode)
@@ -97,9 +105,41 @@ Partial Class PageRegister
         Me.GroupRegister.Panel.Controls.Add(Me.KryptonLabel3)
         Me.GroupRegister.Panel.Controls.Add(Me.KryptonLabel2)
         Me.GroupRegister.Panel.Controls.Add(Me.KryptonLabel1)
-        Me.GroupRegister.Size = New System.Drawing.Size(780, 523)
+        Me.GroupRegister.Size = New System.Drawing.Size(780, 510)
         Me.GroupRegister.TabIndex = 2
         Me.GroupRegister.Values.Heading = "Register"
+        '
+        'ListTests
+        '
+        Me.ListTests.AllowUserToAddRows = False
+        Me.ListTests.AllowUserToDeleteRows = False
+        Me.ListTests.AllowUserToResizeColumns = False
+        Me.ListTests.AllowUserToResizeRows = False
+        Me.ListTests.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.ListTests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ListTests.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_name, Me.col_check})
+        Me.ListTests.Location = New System.Drawing.Point(481, 16)
+        Me.ListTests.MultiSelect = False
+        Me.ListTests.Name = "ListTests"
+        Me.ListTests.RowHeadersVisible = False
+        Me.ListTests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
+        Me.ListTests.ShowCellErrors = False
+        Me.ListTests.ShowCellToolTips = False
+        Me.ListTests.ShowEditingIcon = False
+        Me.ListTests.ShowRowErrors = False
+        Me.ListTests.Size = New System.Drawing.Size(282, 415)
+        Me.ListTests.TabIndex = 24
+        Me.ListTests.Visible = False
+        '
+        'LblTests
+        '
+        Me.LblTests.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.LblTests.Location = New System.Drawing.Point(434, 16)
+        Me.LblTests.Name = "LblTests"
+        Me.LblTests.Size = New System.Drawing.Size(41, 20)
+        Me.LblTests.TabIndex = 23
+        Me.LblTests.Values.Text = "Tests:"
+        Me.LblTests.Visible = False
         '
         'TxtNature
         '
@@ -156,7 +196,7 @@ Partial Class PageRegister
         'CmdClear
         '
         Me.CmdClear.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.CmdClear.Location = New System.Drawing.Point(253, 404)
+        Me.CmdClear.Location = New System.Drawing.Point(253, 406)
         Me.CmdClear.Name = "CmdClear"
         Me.CmdClear.Size = New System.Drawing.Size(150, 25)
         Me.CmdClear.TabIndex = 13
@@ -165,7 +205,7 @@ Partial Class PageRegister
         'CmdRegister
         '
         Me.CmdRegister.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.CmdRegister.Location = New System.Drawing.Point(84, 404)
+        Me.CmdRegister.Location = New System.Drawing.Point(84, 406)
         Me.CmdRegister.Name = "CmdRegister"
         Me.CmdRegister.Size = New System.Drawing.Size(150, 25)
         Me.CmdRegister.TabIndex = 12
@@ -290,6 +330,26 @@ Partial Class PageRegister
         Me.KryptonLabel1.TabIndex = 0
         Me.KryptonLabel1.Values.Text = "Name:"
         '
+        'col_name
+        '
+        Me.col_name.FillWeight = 254.3147!
+        Me.col_name.HeaderText = "Name"
+        Me.col_name.Name = "col_name"
+        '
+        'col_check
+        '
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.NullValue = False
+        Me.col_check.DefaultCellStyle = DataGridViewCellStyle2
+        Me.col_check.FalseValue = Nothing
+        Me.col_check.FillWeight = 45.68528!
+        Me.col_check.HeaderText = ""
+        Me.col_check.IndeterminateValue = Nothing
+        Me.col_check.Name = "col_check"
+        Me.col_check.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.col_check.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.col_check.TrueValue = Nothing
+        '
         'PageRegister
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -297,7 +357,7 @@ Partial Class PageRegister
         Me.Controls.Add(Me.PanelBack)
         Me.MinimumSize = New System.Drawing.Size(800, 0)
         Me.Name = "PageRegister"
-        Me.Size = New System.Drawing.Size(800, 543)
+        Me.Size = New System.Drawing.Size(800, 530)
         CType(Me.PanelBack, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelBack.ResumeLayout(False)
         CType(Me.GroupRegister.Panel, System.ComponentModel.ISupportInitialize).EndInit()
@@ -305,6 +365,7 @@ Partial Class PageRegister
         Me.GroupRegister.Panel.PerformLayout()
         CType(Me.GroupRegister, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupRegister.ResumeLayout(False)
+        CType(Me.ListTests, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtNature, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtSample, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtSex, System.ComponentModel.ISupportInitialize).EndInit()
@@ -336,4 +397,8 @@ Partial Class PageRegister
     Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents LblTests As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents ListTests As ComponentFactory.Krypton.Toolkit.KryptonDataGridView
+    Friend WithEvents col_name As DataGridViewTextBoxColumn
+    Friend WithEvents col_check As ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn
 End Class

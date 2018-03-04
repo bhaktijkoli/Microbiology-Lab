@@ -10,6 +10,9 @@
             frm.Show()
             Me.Close()
         End If
+        TxtUsername.Text = "wwe"
+        TxtPassword.Text = "wwe"
+        CmdLogin.PerformClick()
     End Sub
 
     Private Sub CmdLogin_Click(sender As Object, e As EventArgs) Handles CmdLogin.Click

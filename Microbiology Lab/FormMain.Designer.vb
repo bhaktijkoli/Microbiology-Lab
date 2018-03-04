@@ -56,13 +56,14 @@ Partial Class FormMain
         Me.NavMain.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelAlternate
         Me.NavMain.Pages.AddRange(New ComponentFactory.Krypton.Navigator.KryptonPage() {Me.NavRegister, Me.NavList, Me.NavSamples, Me.NavBloodTests})
         Me.NavMain.SelectedIndex = 3
-        Me.NavMain.Size = New System.Drawing.Size(784, 562)
+        Me.NavMain.Size = New System.Drawing.Size(804, 582)
         Me.NavMain.TabIndex = 0
         Me.NavMain.Text = "KryptonNavigator1"
         '
         'NavRegister
         '
         Me.NavRegister.AutoHiddenSlideSize = New System.Drawing.Size(200, 200)
+        Me.NavRegister.AutoScroll = True
         Me.NavRegister.Controls.Add(Me.PageRegister1)
         Me.NavRegister.Flags = 65534
         Me.NavRegister.LastVisibleSet = True
@@ -76,6 +77,7 @@ Partial Class FormMain
         'NavList
         '
         Me.NavList.AutoHiddenSlideSize = New System.Drawing.Size(200, 200)
+        Me.NavList.AutoScroll = True
         Me.NavList.Flags = 65534
         Me.NavList.LastVisibleSet = True
         Me.NavList.MinimumSize = New System.Drawing.Size(50, 50)
@@ -88,6 +90,7 @@ Partial Class FormMain
         'NavSamples
         '
         Me.NavSamples.AutoHiddenSlideSize = New System.Drawing.Size(200, 200)
+        Me.NavSamples.AutoScroll = True
         Me.NavSamples.Controls.Add(Me.PageSamples1)
         Me.NavSamples.Flags = 65534
         Me.NavSamples.LastVisibleSet = True
@@ -101,22 +104,23 @@ Partial Class FormMain
         'NavBloodTests
         '
         Me.NavBloodTests.AutoHiddenSlideSize = New System.Drawing.Size(200, 200)
+        Me.NavBloodTests.AutoScroll = True
         Me.NavBloodTests.Controls.Add(Me.PageBloodTests1)
         Me.NavBloodTests.Flags = 65534
         Me.NavBloodTests.LastVisibleSet = True
         Me.NavBloodTests.MinimumSize = New System.Drawing.Size(50, 50)
         Me.NavBloodTests.Name = "NavBloodTests"
-        Me.NavBloodTests.Size = New System.Drawing.Size(782, 530)
+        Me.NavBloodTests.Size = New System.Drawing.Size(802, 550)
         Me.NavBloodTests.Text = "Blood Tests"
         Me.NavBloodTests.ToolTipTitle = "Page ToolTip"
         Me.NavBloodTests.UniqueName = "9C06F1181CB14F85659E9469E9BDE3F8"
         '
         'PageRegister1
         '
-        Me.PageRegister1.Location = New System.Drawing.Point(154, 112)
+        Me.PageRegister1.Location = New System.Drawing.Point(163, 61)
         Me.PageRegister1.MinimumSize = New System.Drawing.Size(800, 0)
         Me.PageRegister1.Name = "PageRegister1"
-        Me.PageRegister1.Size = New System.Drawing.Size(800, 543)
+        Me.PageRegister1.Size = New System.Drawing.Size(800, 530)
         Me.PageRegister1.TabIndex = 0
         '
         'PageSamples1
@@ -132,14 +136,14 @@ Partial Class FormMain
         Me.PageBloodTests1.Location = New System.Drawing.Point(76, 44)
         Me.PageBloodTests1.MinimumSize = New System.Drawing.Size(800, 0)
         Me.PageBloodTests1.Name = "PageBloodTests1"
-        Me.PageBloodTests1.Size = New System.Drawing.Size(800, 415)
+        Me.PageBloodTests1.Size = New System.Drawing.Size(800, 150)
         Me.PageBloodTests1.TabIndex = 0
         '
         'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(784, 562)
+        Me.ClientSize = New System.Drawing.Size(804, 582)
         Me.Controls.Add(Me.NavMain)
         Me.Icon = Global.Microbiology_Lab.My.Resources.Resources.icon
         Me.MinimumSize = New System.Drawing.Size(800, 600)
@@ -160,9 +164,9 @@ Partial Class FormMain
     Friend WithEvents NavMain As ComponentFactory.Krypton.Navigator.KryptonNavigator
     Friend WithEvents NavRegister As ComponentFactory.Krypton.Navigator.KryptonPage
     Friend WithEvents NavList As ComponentFactory.Krypton.Navigator.KryptonPage
-    Friend WithEvents PageRegister1 As PageRegister
     Friend WithEvents NavSamples As ComponentFactory.Krypton.Navigator.KryptonPage
     Friend WithEvents PageSamples1 As PageSamples
     Friend WithEvents NavBloodTests As ComponentFactory.Krypton.Navigator.KryptonPage
     Friend WithEvents PageBloodTests1 As PageBloodTests
+    Friend WithEvents PageRegister1 As PageRegister
 End Class

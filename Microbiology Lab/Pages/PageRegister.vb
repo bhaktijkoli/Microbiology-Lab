@@ -4,7 +4,7 @@
 
         ' This call is required by the designer.
         InitializeComponent()
-
+        Me.Height = 530
         ' Add any initialization after the InitializeComponent() call.
         AddHandler AppMain.SettingsUpdated, AddressOf LoadAll
     End Sub
@@ -57,6 +57,14 @@
                 .AutoCompleteCustomSource.Add(s)
             Next
         End With
+
+        ListTests.Rows.Clear()
+        For Each T As BloodTest In Database.BloodTests
+            Dim row = ListTests.Rows(ListTests.Rows.Add())
+            row.Cells("col_name").Value = T.name
+        Next
+
+
     End Sub
 
     Private Sub CmdRegister_Click(sender As Object, e As EventArgs) Handles CmdRegister.Click
@@ -133,5 +141,15 @@
         TxtUnit.Clear()
         TxtWard.Clear()
         TxtNature.SelectedIndex = -1
+    End Sub
+
+    Private Sub TxtSample_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TxtSample.SelectedIndexChanged
+        If TxtSample.Text.ToLower = "blood" Then
+            LblTests.Visible = True
+            ListTests.Visible = True
+        Else
+            LblTests.Visible = False
+            ListTests.Visible = False
+        End If
     End Sub
 End Class
