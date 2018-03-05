@@ -24,5 +24,6 @@ Partial Public Class Test
     Public Property nature As String
     Public Property created_at As Nullable(Of Long)
     Public Property created_by As String
+    Public Property process As Nullable(Of Long)
 
 End Class

@@ -30,11 +30,13 @@ Partial Class FormMain
         Me.PageRegister1 = New Microbiology_Lab.PageRegister()
         Me.PageSamples1 = New Microbiology_Lab.PageSamples()
         Me.PageBloodTests1 = New Microbiology_Lab.PageBloodTests()
+        Me.PageList1 = New Microbiology_Lab.PageList()
         CType(Me.NavMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NavMain.SuspendLayout()
         CType(Me.NavRegister, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NavRegister.SuspendLayout()
         CType(Me.NavList, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.NavList.SuspendLayout()
         CType(Me.NavSamples, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NavSamples.SuspendLayout()
         CType(Me.NavBloodTests, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,7 +57,7 @@ Partial Class FormMain
         Me.NavMain.Name = "NavMain"
         Me.NavMain.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelAlternate
         Me.NavMain.Pages.AddRange(New ComponentFactory.Krypton.Navigator.KryptonPage() {Me.NavRegister, Me.NavList, Me.NavSamples, Me.NavBloodTests})
-        Me.NavMain.SelectedIndex = 3
+        Me.NavMain.SelectedIndex = 1
         Me.NavMain.Size = New System.Drawing.Size(804, 582)
         Me.NavMain.TabIndex = 0
         Me.NavMain.Text = "KryptonNavigator1"
@@ -78,11 +80,12 @@ Partial Class FormMain
         '
         Me.NavList.AutoHiddenSlideSize = New System.Drawing.Size(200, 200)
         Me.NavList.AutoScroll = True
+        Me.NavList.Controls.Add(Me.PageList1)
         Me.NavList.Flags = 65534
         Me.NavList.LastVisibleSet = True
         Me.NavList.MinimumSize = New System.Drawing.Size(50, 50)
         Me.NavList.Name = "NavList"
-        Me.NavList.Size = New System.Drawing.Size(782, 530)
+        Me.NavList.Size = New System.Drawing.Size(802, 550)
         Me.NavList.Text = "List"
         Me.NavList.ToolTipTitle = "Page ToolTip"
         Me.NavList.UniqueName = "A230ECA84BA74277CBA34CB632F611BC"
@@ -96,7 +99,7 @@ Partial Class FormMain
         Me.NavSamples.LastVisibleSet = True
         Me.NavSamples.MinimumSize = New System.Drawing.Size(50, 50)
         Me.NavSamples.Name = "NavSamples"
-        Me.NavSamples.Size = New System.Drawing.Size(782, 530)
+        Me.NavSamples.Size = New System.Drawing.Size(802, 550)
         Me.NavSamples.Text = "Samples"
         Me.NavSamples.ToolTipTitle = "Page ToolTip"
         Me.NavSamples.UniqueName = "B8B2F040313E4ECA6F8A7BF64F7C2A88"
@@ -139,6 +142,14 @@ Partial Class FormMain
         Me.PageBloodTests1.Size = New System.Drawing.Size(800, 150)
         Me.PageBloodTests1.TabIndex = 0
         '
+        'PageList1
+        '
+        Me.PageList1.Location = New System.Drawing.Point(250, 57)
+        Me.PageList1.MinimumSize = New System.Drawing.Size(800, 0)
+        Me.PageList1.Name = "PageList1"
+        Me.PageList1.Size = New System.Drawing.Size(800, 415)
+        Me.PageList1.TabIndex = 0
+        '
         'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -153,6 +164,7 @@ Partial Class FormMain
         CType(Me.NavRegister, System.ComponentModel.ISupportInitialize).EndInit()
         Me.NavRegister.ResumeLayout(False)
         CType(Me.NavList, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.NavList.ResumeLayout(False)
         CType(Me.NavSamples, System.ComponentModel.ISupportInitialize).EndInit()
         Me.NavSamples.ResumeLayout(False)
         CType(Me.NavBloodTests, System.ComponentModel.ISupportInitialize).EndInit()
@@ -169,4 +181,5 @@ Partial Class FormMain
     Friend WithEvents NavBloodTests As ComponentFactory.Krypton.Navigator.KryptonPage
     Friend WithEvents PageBloodTests1 As PageBloodTests
     Friend WithEvents PageRegister1 As PageRegister
+    Friend WithEvents PageList1 As PageList
 End Class

@@ -123,6 +123,7 @@
                       Test.sample = TxtSample.SelectedItem
                       Test.nature = TxtNature.SelectedItem
                       Test.created_by = AppMain.User.username
+                      Test.created_at = DateTime.Now.ToString(TimeFormat)
                   End Sub)
         Database.Tests.Add(Test)
         Database.SaveChanges()

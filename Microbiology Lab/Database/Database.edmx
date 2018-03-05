@@ -44,6 +44,7 @@
           <Property Name="nature" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="created_at" Type="integer" />
           <Property Name="created_by" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="process" Type="integer" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -114,6 +115,7 @@
           <Property Name="nature" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="created_at" Type="Int64" />
           <Property Name="created_by" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="process" Type="Int64" />
         </EntityType>
         <EntityType Name="SubTest">
           <Key>
@@ -159,6 +161,7 @@
           <EntitySetMapping Name="Tests">
             <EntityTypeMapping TypeName="DatabaseModel.Test">
               <MappingFragment StoreEntitySet="Tests">
+                <ScalarProperty Name="process" ColumnName="process" />
                 <ScalarProperty Name="created_by" ColumnName="created_by" />
                 <ScalarProperty Name="created_at" ColumnName="created_at" />
                 <ScalarProperty Name="nature" ColumnName="nature" />

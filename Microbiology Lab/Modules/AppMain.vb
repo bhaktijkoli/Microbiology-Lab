@@ -1,4 +1,5 @@
 ﻿Module AppMain
+    Public TimeFormat As String = "yyyyMMdd"
     Public User As User
     Public Database As New DatabaseEntities
 

@@ -210,6 +210,12 @@
     <Compile Include="Pages\PageBloodTests.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Pages\PageList.Designer.vb">
+      <DependentUpon>PageList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageList.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Pages\PageRegister.Designer.vb">
       <DependentUpon>PageRegister.vb</DependentUpon>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\PageBloodTests.resx">
       <DependentUpon>PageBloodTests.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PageList.resx">
+      <DependentUpon>PageList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\PageRegister.resx">
       <DependentUpon>PageRegister.vb</DependentUpon>
