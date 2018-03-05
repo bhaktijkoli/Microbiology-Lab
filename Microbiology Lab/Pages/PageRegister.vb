@@ -80,6 +80,10 @@
             MessageBox.Show("Select proper sex.", Me.ParentForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
+        If TxtAge.Value <= 0 Then
+            MessageBox.Show("Enter proper Age.", Me.ParentForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
         If TxtWard.TextLength < 1 Then
             MessageBox.Show("Enter a valid ward name.", Me.ParentForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
@@ -90,6 +94,10 @@
         End If
         If TxtSample.SelectedIndex = -1 Then
             MessageBox.Show("Select sample.", Me.ParentForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+        If TxtSample.Text.ToLower = "blood" And GetSubTestCount() = 0 Then
+            MessageBox.Show("You must select atleast one test.", Me.ParentForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
         Loader = New DialogLoading
@@ -118,6 +126,22 @@
                   End Sub)
         Database.Tests.Add(Test)
         Database.SaveChanges()
+
+        If Test.sample.ToLower = "blood" Then
+            Me.Invoke(Sub()
+                          For Each row As DataGridViewRow In ListTests.Rows
+                              If row.Cells("col_check").Value = False Then
+                                  Continue For
+                              End If
+                              Dim subtest As New SubTest
+                              subtest.testid = Test.id
+                              subtest.test = row.Cells("col_name").Value
+                              Database.SubTests.Add(subtest)
+                          Next
+                      End Sub)
+            Database.SaveChanges()
+        End If
+
         If My.Settings.ward.Contains(TxtWard.Text) = False Then
             My.Settings.ward.Add(TxtWard.Text)
         End If
@@ -133,7 +157,7 @@
     Private Sub CmdClear_Click(sender As Object, e As EventArgs) Handles CmdClear.Click
         TxtName.Clear()
         TxtAddress.Clear()
-        TxtAge.Value = 0
+        TxtAge.Value = 1
         TxtPincode.Clear()
         TxtRegNo.Clear()
         TxtSample.SelectedIndex = -1
@@ -152,4 +176,15 @@
             ListTests.Visible = False
         End If
     End Sub
+
+    ' FUNCTIONs
+    Private Function GetSubTestCount() As Integer
+        Dim count As Integer = 0
+        For Each row As DataGridViewRow In ListTests.Rows
+            If row.Cells("col_check").Value = True Then
+                count += 1
+            End If
+        Next
+        Return count
+    End Function
 End Class

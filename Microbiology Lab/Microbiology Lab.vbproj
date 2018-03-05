@@ -153,6 +153,9 @@
     <Compile Include="Database\Sample.vb">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
+    <Compile Include="Database\SubTest.vb">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database\Test.vb">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>

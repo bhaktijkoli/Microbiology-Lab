@@ -22,10 +22,12 @@ Partial Class PageRegister
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelBack = New ComponentFactory.Krypton.Toolkit.KryptonPanel()
         Me.GroupRegister = New ComponentFactory.Krypton.Toolkit.KryptonGroupBox()
         Me.ListTests = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
+        Me.col_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_check = New ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn()
         Me.LblTests = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.TxtNature = New ComponentFactory.Krypton.Toolkit.KryptonComboBox()
         Me.LblNature = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
@@ -49,8 +51,6 @@ Partial Class PageRegister
         Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.col_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_check = New ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn()
         CType(Me.PanelBack, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBack.SuspendLayout()
         CType(Me.GroupRegister, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -130,6 +130,26 @@ Partial Class PageRegister
         Me.ListTests.Size = New System.Drawing.Size(282, 415)
         Me.ListTests.TabIndex = 24
         Me.ListTests.Visible = False
+        '
+        'col_name
+        '
+        Me.col_name.FillWeight = 254.3147!
+        Me.col_name.HeaderText = "Name"
+        Me.col_name.Name = "col_name"
+        '
+        'col_check
+        '
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.NullValue = False
+        Me.col_check.DefaultCellStyle = DataGridViewCellStyle1
+        Me.col_check.FalseValue = Nothing
+        Me.col_check.FillWeight = 45.68528!
+        Me.col_check.HeaderText = ""
+        Me.col_check.IndeterminateValue = Nothing
+        Me.col_check.Name = "col_check"
+        Me.col_check.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.col_check.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.col_check.TrueValue = Nothing
         '
         'LblTests
         '
@@ -237,6 +257,7 @@ Partial Class PageRegister
         Me.TxtAge.Name = "TxtAge"
         Me.TxtAge.Size = New System.Drawing.Size(120, 22)
         Me.TxtAge.TabIndex = 4
+        Me.TxtAge.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'TxtUnit
         '
@@ -329,26 +350,6 @@ Partial Class PageRegister
         Me.KryptonLabel1.Size = New System.Drawing.Size(46, 20)
         Me.KryptonLabel1.TabIndex = 0
         Me.KryptonLabel1.Values.Text = "Name:"
-        '
-        'col_name
-        '
-        Me.col_name.FillWeight = 254.3147!
-        Me.col_name.HeaderText = "Name"
-        Me.col_name.Name = "col_name"
-        '
-        'col_check
-        '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.NullValue = False
-        Me.col_check.DefaultCellStyle = DataGridViewCellStyle2
-        Me.col_check.FalseValue = Nothing
-        Me.col_check.FillWeight = 45.68528!
-        Me.col_check.HeaderText = ""
-        Me.col_check.IndeterminateValue = Nothing
-        Me.col_check.Name = "col_check"
-        Me.col_check.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.col_check.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.col_check.TrueValue = Nothing
         '
         'PageRegister
         '
