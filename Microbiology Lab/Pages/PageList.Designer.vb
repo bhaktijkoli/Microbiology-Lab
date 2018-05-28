@@ -22,14 +22,10 @@ Partial Class PageList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelBack = New ComponentFactory.Krypton.Toolkit.KryptonPanel()
         Me.KryptonGroupBox1 = New ComponentFactory.Krypton.Toolkit.KryptonGroupBox()
-        Me.KryptonPanel1 = New ComponentFactory.Krypton.Toolkit.KryptonPanel()
-        Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.TxtSearch = New ComponentFactory.Krypton.Toolkit.KryptonTextBox()
-        Me.CmdSearch = New ComponentFactory.Krypton.Toolkit.KryptonButton()
         Me.ListUsers = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView()
         Me.col_no = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,16 +36,20 @@ Partial Class PageList
         Me.col_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_update = New ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn()
         Me.col_print = New ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn()
+        Me.KryptonPanel1 = New ComponentFactory.Krypton.Toolkit.KryptonPanel()
         Me.CmdRefresh = New ComponentFactory.Krypton.Toolkit.KryptonButton()
+        Me.CmdSearch = New ComponentFactory.Krypton.Toolkit.KryptonButton()
+        Me.TxtSearch = New ComponentFactory.Krypton.Toolkit.KryptonTextBox()
+        Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         CType(Me.PanelBack, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBack.SuspendLayout()
         CType(Me.KryptonGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KryptonGroupBox1.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.KryptonGroupBox1.Panel.SuspendLayout()
         Me.KryptonGroupBox1.SuspendLayout()
+        CType(Me.ListUsers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KryptonPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.KryptonPanel1.SuspendLayout()
-        CType(Me.ListUsers, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelBack
@@ -75,45 +75,6 @@ Partial Class PageList
         Me.KryptonGroupBox1.Size = New System.Drawing.Size(780, 395)
         Me.KryptonGroupBox1.TabIndex = 0
         Me.KryptonGroupBox1.Values.Heading = "List"
-        '
-        'KryptonPanel1
-        '
-        Me.KryptonPanel1.Controls.Add(Me.CmdRefresh)
-        Me.KryptonPanel1.Controls.Add(Me.CmdSearch)
-        Me.KryptonPanel1.Controls.Add(Me.TxtSearch)
-        Me.KryptonPanel1.Controls.Add(Me.KryptonLabel1)
-        Me.KryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.KryptonPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.KryptonPanel1.Name = "KryptonPanel1"
-        Me.KryptonPanel1.Size = New System.Drawing.Size(776, 39)
-        Me.KryptonPanel1.TabIndex = 0
-        '
-        'KryptonLabel1
-        '
-        Me.KryptonLabel1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.KryptonLabel1.Location = New System.Drawing.Point(3, 3)
-        Me.KryptonLabel1.Name = "KryptonLabel1"
-        Me.KryptonLabel1.Size = New System.Drawing.Size(92, 20)
-        Me.KryptonLabel1.TabIndex = 0
-        Me.KryptonLabel1.Values.Text = "Name / RegNo"
-        '
-        'TxtSearch
-        '
-        Me.TxtSearch.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxtSearch.Location = New System.Drawing.Point(101, 3)
-        Me.TxtSearch.Name = "TxtSearch"
-        Me.TxtSearch.Size = New System.Drawing.Size(431, 20)
-        Me.TxtSearch.TabIndex = 1
-        '
-        'CmdSearch
-        '
-        Me.CmdSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CmdSearch.Location = New System.Drawing.Point(538, 3)
-        Me.CmdSearch.Name = "CmdSearch"
-        Me.CmdSearch.Size = New System.Drawing.Size(105, 25)
-        Me.CmdSearch.TabIndex = 2
-        Me.CmdSearch.Values.Text = "Search"
         '
         'ListUsers
         '
@@ -183,21 +144,33 @@ Partial Class PageList
         '
         'col_update
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.NullValue = "Update"
-        Me.col_update.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.NullValue = "Update"
+        Me.col_update.DefaultCellStyle = DataGridViewCellStyle1
         Me.col_update.HeaderText = ""
         Me.col_update.Name = "col_update"
         Me.col_update.ReadOnly = True
         '
         'col_print
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.NullValue = "Print"
-        Me.col_print.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.NullValue = "Print"
+        Me.col_print.DefaultCellStyle = DataGridViewCellStyle2
         Me.col_print.HeaderText = ""
         Me.col_print.Name = "col_print"
         Me.col_print.ReadOnly = True
+        '
+        'KryptonPanel1
+        '
+        Me.KryptonPanel1.Controls.Add(Me.CmdRefresh)
+        Me.KryptonPanel1.Controls.Add(Me.CmdSearch)
+        Me.KryptonPanel1.Controls.Add(Me.TxtSearch)
+        Me.KryptonPanel1.Controls.Add(Me.KryptonLabel1)
+        Me.KryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.KryptonPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.KryptonPanel1.Name = "KryptonPanel1"
+        Me.KryptonPanel1.Size = New System.Drawing.Size(776, 39)
+        Me.KryptonPanel1.TabIndex = 0
         '
         'CmdRefresh
         '
@@ -207,6 +180,33 @@ Partial Class PageList
         Me.CmdRefresh.Size = New System.Drawing.Size(105, 25)
         Me.CmdRefresh.TabIndex = 3
         Me.CmdRefresh.Values.Text = "Refresh"
+        '
+        'CmdSearch
+        '
+        Me.CmdSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CmdSearch.Location = New System.Drawing.Point(538, 3)
+        Me.CmdSearch.Name = "CmdSearch"
+        Me.CmdSearch.Size = New System.Drawing.Size(105, 25)
+        Me.CmdSearch.TabIndex = 2
+        Me.CmdSearch.Values.Text = "Search"
+        '
+        'TxtSearch
+        '
+        Me.TxtSearch.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtSearch.Location = New System.Drawing.Point(101, 3)
+        Me.TxtSearch.Name = "TxtSearch"
+        Me.TxtSearch.Size = New System.Drawing.Size(431, 20)
+        Me.TxtSearch.TabIndex = 1
+        '
+        'KryptonLabel1
+        '
+        Me.KryptonLabel1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.KryptonLabel1.Location = New System.Drawing.Point(3, 3)
+        Me.KryptonLabel1.Name = "KryptonLabel1"
+        Me.KryptonLabel1.Size = New System.Drawing.Size(92, 20)
+        Me.KryptonLabel1.TabIndex = 0
+        Me.KryptonLabel1.Values.Text = "Name / RegNo"
         '
         'PageList
         '
@@ -222,10 +222,10 @@ Partial Class PageList
         Me.KryptonGroupBox1.Panel.ResumeLayout(False)
         CType(Me.KryptonGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.KryptonGroupBox1.ResumeLayout(False)
+        CType(Me.ListUsers, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KryptonPanel1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.KryptonPanel1.ResumeLayout(False)
         Me.KryptonPanel1.PerformLayout()
-        CType(Me.ListUsers, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

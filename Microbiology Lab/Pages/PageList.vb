@@ -41,4 +41,18 @@
         isSearch = True
         CmdRefresh.PerformClick()
     End Sub
+
+    Private Sub ListUsers_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ListUsers.CellContentClick
+        If e.ColumnIndex = ListUsers.Columns("col_update").Index Then
+            Dim row = ListUsers.Rows(e.RowIndex)
+            Dim test As Test = row.Tag
+            If test.sample.ToLower = "blood" Then
+                Dim frm As New FormUpdate(test)
+                frm.ShowDialog()
+            Else
+                Dim frm As New FormUpdate(test)
+                frm.ShowDialog()
+            End If
+        End If
+    End Sub
 End Class
