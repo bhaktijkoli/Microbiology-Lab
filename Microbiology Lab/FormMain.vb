@@ -19,5 +19,7 @@
             NavBloodTests.Visible = False
         End If
         NavMain.SelectedPage = NavRegister
+        'Refresh
+        PageList1.CmdRefresh.PerformClick()
     End Sub
 End Class

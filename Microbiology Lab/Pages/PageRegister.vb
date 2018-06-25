@@ -122,6 +122,7 @@
                       Test.unit = TxtUnit.Text
                       Test.sample = TxtSample.SelectedItem
                       Test.nature = TxtNature.SelectedItem
+                      Test.process = 0
                       Test.created_by = AppMain.User.username
                       Test.created_at = DateTime.Now.ToString(TimeFormat)
                   End Sub)
