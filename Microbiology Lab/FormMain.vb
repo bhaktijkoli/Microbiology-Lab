@@ -2,8 +2,8 @@
 
     Private Sub NavMain_SelectedPageChanged(sender As Object, e As EventArgs) Handles NavMain.SelectedPageChanged
         Me.Text = My.Application.Info.Title + " - " + NavMain.SelectedPage.Text
-        FormMain_Resize()
         NavMain.SelectedPage.AutoScrollPosition = New Point(0, 0)
+        FormMain_Resize()
     End Sub
 
     Private Sub FormMain_Resize() Handles Me.Resize

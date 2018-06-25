@@ -4,14 +4,15 @@
     Dim Result As Boolean = False
 
     Private Sub FormLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        AppMain.init()
         Me.Text = My.Application.Info.ProductName + " - Login"
         If AppMain.Database.Users.Count = 0 Then
             Dim frm As New FormGettingStarted
             frm.Show()
             Me.Close()
         End If
-        TxtUsername.Text = "wwe"
-        TxtPassword.Text = "wwe"
+        TxtUsername.Text = "test"
+        TxtPassword.Text = "test"
         CmdLogin.PerformClick()
     End Sub
 
