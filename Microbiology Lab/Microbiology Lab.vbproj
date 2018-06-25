@@ -132,6 +132,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\DetailsControl.Designer.vb">
+      <DependentUpon>DetailsControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DetailsControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Database\BloodTest.vb">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
@@ -236,6 +242,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\DetailsControl.resx">
+      <DependentUpon>DetailsControl.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\DialogLoading.resx">
       <DependentUpon>DialogLoading.vb</DependentUpon>
     </EmbeddedResource>
@@ -293,9 +302,7 @@
     <None Include="packages.config" />
     <None Include="Resources\icon.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Database\Database.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
