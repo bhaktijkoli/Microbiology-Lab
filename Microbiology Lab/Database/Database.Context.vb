@@ -27,5 +27,8 @@ Partial Public Class DatabaseEntities
     Public Overridable Property BloodTests() As DbSet(Of BloodTest)
     Public Overridable Property Tests() As DbSet(Of Test)
     Public Overridable Property SubTests() As DbSet(Of SubTest)
+    Public Overridable Property Pathogens() As DbSet(Of Pathogen)
+    Public Overridable Property GramNegatives() As DbSet(Of GramNegative)
+    Public Overridable Property GramPositives() As DbSet(Of GramPositive)
 
 End Class

@@ -1,0 +1,13 @@
+﻿Amikacin
+Amoxyclavulinic Acid
+Ampicillin/Sulbactum
+Cefotaxime
+Cefazolin
+Ciprofloxacin
+Meropenem
+Piperacillin
+Cotrimoxazole
+Imipenem
+Netilmycin
+Cefepime
+Piperaciilin- Tazobactum

@@ -12,6 +12,27 @@
           <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
+        <EntityType Name="GramNegatives">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="GramPositives">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="Pathogens">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
         <EntityType Name="Samples">
           <Key>
             <PropertyRef Name="id" />
@@ -58,6 +79,9 @@
         </EntityType>
         <EntityContainer Name="DatabaseModelStoreContainer">
           <EntitySet Name="BloodTests" EntityType="Self.BloodTests" store:Type="Tables" />
+          <EntitySet Name="GramNegatives" EntityType="Self.GramNegatives" store:Type="Tables" />
+          <EntitySet Name="GramPositives" EntityType="Self.GramPositives" store:Type="Tables" />
+          <EntitySet Name="Pathogens" EntityType="Self.Pathogens" store:Type="Tables" />
           <EntitySet Name="Samples" EntityType="Self.Samples" store:Type="Tables" />
           <EntitySet Name="SubTests" EntityType="Self.SubTests" store:Type="Tables" />
           <EntitySet Name="Tests" EntityType="Self.Tests" store:Type="Tables" />
@@ -83,6 +107,9 @@
           <EntitySet Name="BloodTests" EntityType="DatabaseModel.BloodTest" />
           <EntitySet Name="Tests" EntityType="DatabaseModel.Test" />
           <EntitySet Name="SubTests" EntityType="DatabaseModel.SubTest" />
+          <EntitySet Name="Pathogens" EntityType="DatabaseModel.Pathogen" />
+          <EntitySet Name="GramNegatives" EntityType="DatabaseModel.GramNegative" />
+          <EntitySet Name="GramPositives" EntityType="DatabaseModel.GramPositive" />
         </EntityContainer>
         <EntityType Name="Sample">
           <Key>
@@ -124,6 +151,27 @@
           <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="testid" Type="Int64" />
           <Property Name="test" Type="String" />
+        </EntityType>
+        <EntityType Name="Pathogen">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GramNegative">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GramPositive">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -183,6 +231,30 @@
               <MappingFragment StoreEntitySet="SubTests">
                 <ScalarProperty Name="test" ColumnName="test" />
                 <ScalarProperty Name="testid" ColumnName="testid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pathogens">
+            <EntityTypeMapping TypeName="DatabaseModel.Pathogen">
+              <MappingFragment StoreEntitySet="Pathogens">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GramNegatives">
+            <EntityTypeMapping TypeName="DatabaseModel.GramNegative">
+              <MappingFragment StoreEntitySet="GramNegatives">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GramPositives">
+            <EntityTypeMapping TypeName="DatabaseModel.GramPositive">
+              <MappingFragment StoreEntitySet="GramPositives">
+                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -1,0 +1,15 @@
+﻿Gentamicin
+Erythromycin
+Clindamycin
+Cotrimoxazole
+Cefuroxime
+Penicilin
+Cefazolin
+Vancomycin
+Linezolid
+Netilmycin
+Cefoxitin
+Cefotaxime
+Oxacillin
+Levofloxacin
+Chloramphenicol

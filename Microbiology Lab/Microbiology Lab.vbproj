@@ -156,6 +156,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
+    <Compile Include="Database\GramNegative.vb">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\GramPositive.vb">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Pathogen.vb">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database\Sample.vb">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
@@ -234,6 +243,18 @@
     <Compile Include="Pages\PageRegister.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Pages\PagePathogens.Designer.vb">
+      <DependentUpon>PagePathogens.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagePathogens.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\PageAntibiotics.Designer.vb">
+      <DependentUpon>PageAntibiotics.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageAntibiotics.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Pages\PageSamples.Designer.vb">
       <DependentUpon>PageSamples.vb</DependentUpon>
     </Compile>
@@ -275,6 +296,12 @@
     <EmbeddedResource Include="Pages\PageRegister.resx">
       <DependentUpon>PageRegister.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PagePathogens.resx">
+      <DependentUpon>PagePathogens.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PageAntibiotics.resx">
+      <DependentUpon>PageAntibiotics.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\PageSamples.resx">
       <DependentUpon>PageSamples.vb</DependentUpon>
     </EmbeddedResource>
@@ -296,7 +323,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -315,6 +344,15 @@
       <LastGenOutput>Database.vb</LastGenOutput>
     </Content>
     <Content Include="Resources\BloodTests.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GramNegatives.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GramPositives.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Pathogens.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Samples.txt">
