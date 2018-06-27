@@ -54,4 +54,19 @@
             ListAntibiotics.Height = 60 + (ListAntibiotics.Rows.Count * 22)
         End If
     End Sub
+
+    Private Sub ListAntibiotics_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ListAntibiotics.CellContentClick
+        Dim r = ListAntibiotics.Rows(e.RowIndex)
+        Dim c = ListAntibiotics.Columns(e.ColumnIndex)
+        If c.Name = "col_sen" Then
+            r.Cells("col_res").Value = False
+            r.Cells("col_inter").Value = False
+        ElseIf c.Name = "col_res" Then
+            r.Cells("col_sen").Value = False
+            r.Cells("col_inter").Value = False
+        ElseIf c.Name = "col_inter" Then
+            r.Cells("col_sen").Value = False
+            r.Cells("col_res").Value = False
+        End If
+    End Sub
 End Class
