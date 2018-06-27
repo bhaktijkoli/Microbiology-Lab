@@ -16,4 +16,5 @@
             lblDate.Text = "Date of Specimen Collection: " + dt.ToShortDateString + ", " + dt.ToShortTimeString
         End With
     End Sub
+
 End Class

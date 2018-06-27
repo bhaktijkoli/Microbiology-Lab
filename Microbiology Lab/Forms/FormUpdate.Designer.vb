@@ -24,7 +24,8 @@ Partial Class FormUpdate
     Private Sub InitializeComponent()
         Me.KryptonPanel1 = New ComponentFactory.Krypton.Toolkit.KryptonPanel()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.DetailsControl1 = New Microbiology_Lab.DetailsControl()
+        Me.DetailsControlEx = New Microbiology_Lab.DetailsControl()
+        Me.ReportControl1 = New Microbiology_Lab.ReportControl()
         CType(Me.KryptonPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.KryptonPanel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
@@ -36,39 +37,51 @@ Partial Class FormUpdate
         Me.KryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.KryptonPanel1.Location = New System.Drawing.Point(0, 0)
         Me.KryptonPanel1.Name = "KryptonPanel1"
-        Me.KryptonPanel1.Size = New System.Drawing.Size(548, 562)
+        Me.KryptonPanel1.Size = New System.Drawing.Size(634, 430)
         Me.KryptonPanel1.TabIndex = 0
         '
         'FlowLayoutPanel1
         '
+        Me.FlowLayoutPanel1.AutoScroll = True
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.Transparent
-        Me.FlowLayoutPanel1.Controls.Add(Me.DetailsControl1)
+        Me.FlowLayoutPanel1.Controls.Add(Me.DetailsControlEx)
+        Me.FlowLayoutPanel1.Controls.Add(Me.ReportControl1)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(10)
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(548, 562)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(634, 430)
         Me.FlowLayoutPanel1.TabIndex = 0
+        Me.FlowLayoutPanel1.WrapContents = False
         '
-        'DetailsControl1
+        'DetailsControlEx
         '
-        Me.DetailsControl1.BackColor = System.Drawing.Color.Transparent
-        Me.DetailsControl1.Location = New System.Drawing.Point(13, 13)
-        Me.DetailsControl1.Name = "DetailsControl1"
-        Me.DetailsControl1.Size = New System.Drawing.Size(525, 366)
-        Me.DetailsControl1.TabIndex = 0
+        Me.DetailsControlEx.BackColor = System.Drawing.Color.Transparent
+        Me.DetailsControlEx.Location = New System.Drawing.Point(10, 10)
+        Me.DetailsControlEx.Margin = New System.Windows.Forms.Padding(10)
+        Me.DetailsControlEx.Name = "DetailsControlEx"
+        Me.DetailsControlEx.Size = New System.Drawing.Size(595, 366)
+        Me.DetailsControlEx.TabIndex = 0
+        '
+        'ReportControl1
+        '
+        Me.ReportControl1.BackColor = System.Drawing.Color.Transparent
+        Me.ReportControl1.Location = New System.Drawing.Point(10, 396)
+        Me.ReportControl1.Margin = New System.Windows.Forms.Padding(10)
+        Me.ReportControl1.Name = "ReportControl1"
+        Me.ReportControl1.Size = New System.Drawing.Size(595, 200)
+        Me.ReportControl1.TabIndex = 1
         '
         'FormUpdate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(548, 562)
+        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.ClientSize = New System.Drawing.Size(634, 430)
         Me.Controls.Add(Me.KryptonPanel1)
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "FormUpdate"
-        Me.Text = "Update"
+        Me.Text = "FormUpdate"
         CType(Me.KryptonPanel1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.KryptonPanel1.ResumeLayout(False)
         Me.FlowLayoutPanel1.ResumeLayout(False)
@@ -77,6 +90,8 @@ Partial Class FormUpdate
     End Sub
 
     Friend WithEvents KryptonPanel1 As ComponentFactory.Krypton.Toolkit.KryptonPanel
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents DetailsControl1 As DetailsControl
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents DetailsControlEx As DetailsControl
+    Friend WithEvents ReportControl1 As ReportControl
 End Class

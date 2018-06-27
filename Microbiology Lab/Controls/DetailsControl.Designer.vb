@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class DetailsControl
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,10 @@ Partial Class DetailsControl
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.KryptonGroupBox1 = New ComponentFactory.Krypton.Toolkit.KryptonGroupBox()
+        Me.lblDate = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.TxtAge = New ComponentFactory.Krypton.Toolkit.KryptonTextBox()
         Me.KryptonLabel9 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.TxtSample = New ComponentFactory.Krypton.Toolkit.KryptonTextBox()
@@ -41,7 +42,6 @@ Partial Class DetailsControl
         Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.lblDate = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         CType(Me.KryptonGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KryptonGroupBox1.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.KryptonGroupBox1.Panel.SuspendLayout()
@@ -79,6 +79,15 @@ Partial Class DetailsControl
         Me.KryptonGroupBox1.Size = New System.Drawing.Size(595, 366)
         Me.KryptonGroupBox1.TabIndex = 2
         Me.KryptonGroupBox1.Values.Heading = "Details"
+        '
+        'lblDate
+        '
+        Me.lblDate.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl
+        Me.lblDate.Location = New System.Drawing.Point(11, 308)
+        Me.lblDate.Name = "lblDate"
+        Me.lblDate.Size = New System.Drawing.Size(178, 20)
+        Me.lblDate.TabIndex = 18
+        Me.lblDate.Values.Text = "Date of Specimen Collection: "
         '
         'TxtAge
         '
@@ -242,15 +251,6 @@ Partial Class DetailsControl
         Me.KryptonLabel1.TabIndex = 0
         Me.KryptonLabel1.Values.Text = "Name:"
         '
-        'lblDate
-        '
-        Me.lblDate.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl
-        Me.lblDate.Location = New System.Drawing.Point(11, 308)
-        Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(178, 20)
-        Me.lblDate.TabIndex = 18
-        Me.lblDate.Values.Text = "Date of Specimen Collection: "
-        '
         'DetailsControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -288,4 +288,5 @@ Partial Class DetailsControl
     Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents lblDate As ComponentFactory.Krypton.Toolkit.KryptonLabel
+
 End Class
