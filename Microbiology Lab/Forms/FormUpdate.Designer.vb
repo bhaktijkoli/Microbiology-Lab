@@ -26,6 +26,7 @@ Partial Class FormUpdate
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.DetailsControlEx = New Microbiology_Lab.DetailsControl()
         Me.ReportControl1 = New Microbiology_Lab.ReportControl()
+        Me.RemarkControl1 = New Microbiology_Lab.RemarkControl()
         CType(Me.KryptonPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.KryptonPanel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
@@ -37,7 +38,7 @@ Partial Class FormUpdate
         Me.KryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.KryptonPanel1.Location = New System.Drawing.Point(0, 0)
         Me.KryptonPanel1.Name = "KryptonPanel1"
-        Me.KryptonPanel1.Size = New System.Drawing.Size(634, 430)
+        Me.KryptonPanel1.Size = New System.Drawing.Size(653, 354)
         Me.KryptonPanel1.TabIndex = 0
         '
         'FlowLayoutPanel1
@@ -46,11 +47,12 @@ Partial Class FormUpdate
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.FlowLayoutPanel1.Controls.Add(Me.DetailsControlEx)
         Me.FlowLayoutPanel1.Controls.Add(Me.ReportControl1)
+        Me.FlowLayoutPanel1.Controls.Add(Me.RemarkControl1)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(634, 430)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(653, 354)
         Me.FlowLayoutPanel1.TabIndex = 0
         Me.FlowLayoutPanel1.WrapContents = False
         '
@@ -72,12 +74,20 @@ Partial Class FormUpdate
         Me.ReportControl1.Size = New System.Drawing.Size(595, 200)
         Me.ReportControl1.TabIndex = 1
         '
+        'RemarkControl1
+        '
+        Me.RemarkControl1.Location = New System.Drawing.Point(10, 616)
+        Me.RemarkControl1.Margin = New System.Windows.Forms.Padding(10)
+        Me.RemarkControl1.Name = "RemarkControl1"
+        Me.RemarkControl1.Size = New System.Drawing.Size(603, 144)
+        Me.RemarkControl1.TabIndex = 2
+        '
         'FormUpdate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(634, 430)
+        Me.ClientSize = New System.Drawing.Size(653, 354)
         Me.Controls.Add(Me.KryptonPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "FormUpdate"
@@ -94,4 +104,5 @@ Partial Class FormUpdate
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents DetailsControlEx As DetailsControl
     Friend WithEvents ReportControl1 As ReportControl
+    Friend WithEvents RemarkControl1 As RemarkControl
 End Class
