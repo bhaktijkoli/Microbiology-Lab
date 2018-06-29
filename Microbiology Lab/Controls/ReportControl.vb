@@ -11,18 +11,26 @@ Public Class ReportControl
         Next
         Me.test = Test
         ListResult.SelectedIndex = 0
-        ListResult.SelectedIndex = ListResult.FindString(TestResult.result)
-        ListGram.SelectedIndex = ListGram.FindString(TestResult.gram)
-        ListPathogen.SelectedIndex = ListPathogen.FindString(TestResult.pathogen)
-        Dim lkc As List(Of KeyValuePair(Of String, String)) = JsonConvert.DeserializeObject(Of List(Of KeyValuePair(Of String, String)))(TestResult.antibiotics)
-        ListAntibiotics.Rows.Clear()
-        For Each item As KeyValuePair(Of String, String) In lkc
-            Dim row = ListAntibiotics.Rows(ListAntibiotics.Rows.Add)
-            CreateAntibioticCell(item.Key, item.Value, row)
-        Next
+        If Test.process = 1 Or Test.sample.ToLower = "blood" Then
+            Try
+                ListResult.SelectedIndex = ListResult.FindString(TestResult.result)
+                ListGram.SelectedIndex = ListGram.FindString(TestResult.gram)
+                ListPathogen.SelectedIndex = ListPathogen.FindString(TestResult.pathogen)
+                Dim lkc As List(Of KeyValuePair(Of String, String)) = JsonConvert.DeserializeObject(Of List(Of KeyValuePair(Of String, String)))(TestResult.antibiotics)
+                ListAntibiotics.Rows.Clear()
+                For Each item As KeyValuePair(Of String, String) In lkc
+                    Dim row = ListAntibiotics.Rows(ListAntibiotics.Rows.Add)
+                    CreateAntibioticCell(item.Key, item.Value, row)
+                Next
+            Catch ex As Exception
+            End Try
+        End If
     End Sub
 
-    Public Function setData(ByRef t As Test, tr As TestResult) As Boolean
+    Public Function setData(ByRef t As Test, tr As TestResult, Optional checkForErrors As Boolean = True) As Boolean
+        If checkForErrors = False Then
+            GoTo setData
+        End If
         If ListResult.SelectedIndex = 0 Then
             Return False
         End If
@@ -31,6 +39,7 @@ Public Class ReportControl
                 Return False
             End If
         End If
+setData:
         tr.result = ListResult.SelectedItem
         tr.gram = ListGram.SelectedItem
         tr.pathogen = ListPathogen.SelectedItem

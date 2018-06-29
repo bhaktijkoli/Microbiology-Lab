@@ -47,7 +47,7 @@
             Dim row = ListUsers.Rows(e.RowIndex)
             Dim test As Test = row.Tag
             If test.sample.ToLower = "blood" Then
-                Dim frm As New FormUpdate(test)
+                Dim frm As New FormUpdateBlood(test)
                 frm.ShowDialog()
             Else
                 Dim frm As New FormUpdate(test)

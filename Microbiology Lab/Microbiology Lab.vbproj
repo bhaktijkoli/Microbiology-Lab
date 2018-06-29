@@ -148,6 +148,12 @@
     <Compile Include="Controls\RemarkControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\ReportSubTest.Designer.vb">
+      <DependentUpon>ReportSubTest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ReportSubTest.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\ReportControl.Designer.vb">
       <DependentUpon>ReportControl.vb</DependentUpon>
     </Compile>
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\RemarkControl.resx">
       <DependentUpon>RemarkControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ReportSubTest.resx">
+      <DependentUpon>ReportSubTest.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ReportControl.resx">
       <DependentUpon>ReportControl.vb</DependentUpon>

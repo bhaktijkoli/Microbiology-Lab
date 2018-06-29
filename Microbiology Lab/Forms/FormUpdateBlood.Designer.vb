@@ -27,6 +27,7 @@ Partial Class FormUpdateBlood
         Me.KryptonPanel2 = New ComponentFactory.Krypton.Toolkit.KryptonPanel()
         Me.CmdUpdate = New ComponentFactory.Krypton.Toolkit.KryptonButton()
         Me.DetailsControlEx = New Microbiology_Lab.DetailsControl()
+        Me.ReportSubTest1 = New Microbiology_Lab.ReportSubTest()
         Me.ReportControl1 = New Microbiology_Lab.ReportControl()
         Me.RemarkControl1 = New Microbiology_Lab.RemarkControl()
         CType(Me.KryptonPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,6 +52,7 @@ Partial Class FormUpdateBlood
         Me.FlowLayoutPanel1.AutoScroll = True
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.FlowLayoutPanel1.Controls.Add(Me.DetailsControlEx)
+        Me.FlowLayoutPanel1.Controls.Add(Me.ReportSubTest1)
         Me.FlowLayoutPanel1.Controls.Add(Me.ReportControl1)
         Me.FlowLayoutPanel1.Controls.Add(Me.RemarkControl1)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -89,24 +91,33 @@ Partial Class FormUpdateBlood
         Me.DetailsControlEx.Size = New System.Drawing.Size(595, 366)
         Me.DetailsControlEx.TabIndex = 0
         '
+        'ReportSubTest1
+        '
+        Me.ReportSubTest1.BackColor = System.Drawing.Color.Transparent
+        Me.ReportSubTest1.Location = New System.Drawing.Point(10, 396)
+        Me.ReportSubTest1.Margin = New System.Windows.Forms.Padding(10)
+        Me.ReportSubTest1.Name = "ReportSubTest1"
+        Me.ReportSubTest1.Size = New System.Drawing.Size(595, 64)
+        Me.ReportSubTest1.TabIndex = 1
+        '
         'ReportControl1
         '
         Me.ReportControl1.BackColor = System.Drawing.Color.Transparent
-        Me.ReportControl1.Location = New System.Drawing.Point(10, 396)
+        Me.ReportControl1.Location = New System.Drawing.Point(10, 480)
         Me.ReportControl1.Margin = New System.Windows.Forms.Padding(10)
         Me.ReportControl1.Name = "ReportControl1"
         Me.ReportControl1.Size = New System.Drawing.Size(595, 200)
-        Me.ReportControl1.TabIndex = 1
+        Me.ReportControl1.TabIndex = 3
         '
         'RemarkControl1
         '
-        Me.RemarkControl1.Location = New System.Drawing.Point(10, 616)
+        Me.RemarkControl1.Location = New System.Drawing.Point(10, 700)
         Me.RemarkControl1.Margin = New System.Windows.Forms.Padding(10)
         Me.RemarkControl1.Name = "RemarkControl1"
         Me.RemarkControl1.Size = New System.Drawing.Size(603, 144)
-        Me.RemarkControl1.TabIndex = 2
+        Me.RemarkControl1.TabIndex = 4
         '
-        'FormUpdate
+        'FormUpdateBlood
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -114,7 +125,7 @@ Partial Class FormUpdateBlood
         Me.ClientSize = New System.Drawing.Size(653, 354)
         Me.Controls.Add(Me.KryptonPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Name = "FormUpdate"
+        Me.Name = "FormUpdateBlood"
         Me.Text = "FormUpdate"
         CType(Me.KryptonPanel1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.KryptonPanel1.ResumeLayout(False)
@@ -128,9 +139,10 @@ Partial Class FormUpdateBlood
     Friend WithEvents KryptonPanel1 As ComponentFactory.Krypton.Toolkit.KryptonPanel
     Friend WithEvents DetailsControl1 As DetailsControl
     Friend WithEvents DetailsControlEx As DetailsControl
-    Friend WithEvents ReportControl1 As ReportControl
-    Friend WithEvents RemarkControl1 As RemarkControl
     Friend WithEvents KryptonPanel2 As ComponentFactory.Krypton.Toolkit.KryptonPanel
     Friend WithEvents CmdUpdate As ComponentFactory.Krypton.Toolkit.KryptonButton
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents ReportSubTest1 As ReportSubTest
+    Friend WithEvents ReportControl1 As ReportControl
+    Friend WithEvents RemarkControl1 As RemarkControl
 End Class
