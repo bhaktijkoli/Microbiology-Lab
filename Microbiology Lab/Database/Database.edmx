@@ -40,13 +40,17 @@
           <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
-        <EntityType Name="SubTests">
+        <EntityType Name="TestResults">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="testid" Type="integer" />
-          <Property Name="test" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="test" Type="integer" />
+          <Property Name="name" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="result" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="gram" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="pathogen" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="antibiotics" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityType Name="Tests">
           <Key>
@@ -63,6 +67,7 @@
           <Property Name="unit" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="sample" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="nature" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="remark" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="created_at" Type="integer" />
           <Property Name="created_by" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="process" Type="integer" />
@@ -83,7 +88,7 @@
           <EntitySet Name="GramPositives" EntityType="Self.GramPositives" store:Type="Tables" />
           <EntitySet Name="Pathogens" EntityType="Self.Pathogens" store:Type="Tables" />
           <EntitySet Name="Samples" EntityType="Self.Samples" store:Type="Tables" />
-          <EntitySet Name="SubTests" EntityType="Self.SubTests" store:Type="Tables" />
+          <EntitySet Name="TestResults" EntityType="Self.TestResults" store:Type="Tables" />
           <EntitySet Name="Tests" EntityType="Self.Tests" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" store:Type="Tables" />
         </EntityContainer>
@@ -91,68 +96,17 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="User">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="username" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="role" Type="Int64" />
-          <Property Name="created_at" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Users" EntityType="Self.User" />
-          <EntitySet Name="Samples" EntityType="DatabaseModel.Sample" />
           <EntitySet Name="BloodTests" EntityType="DatabaseModel.BloodTest" />
-          <EntitySet Name="Tests" EntityType="DatabaseModel.Test" />
-          <EntitySet Name="SubTests" EntityType="DatabaseModel.SubTest" />
-          <EntitySet Name="Pathogens" EntityType="DatabaseModel.Pathogen" />
           <EntitySet Name="GramNegatives" EntityType="DatabaseModel.GramNegative" />
           <EntitySet Name="GramPositives" EntityType="DatabaseModel.GramPositive" />
+          <EntitySet Name="Pathogens" EntityType="DatabaseModel.Pathogen" />
+          <EntitySet Name="Samples" EntityType="DatabaseModel.Sample" />
+          <EntitySet Name="TestResults" EntityType="DatabaseModel.TestResult" />
+          <EntitySet Name="Tests" EntityType="DatabaseModel.Test" />
+          <EntitySet Name="Users" EntityType="DatabaseModel.User" />
         </EntityContainer>
-        <EntityType Name="Sample">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="BloodTest">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Test">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="reg_no" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="sex" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="age" Type="Int64" />
-          <Property Name="address" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="pincode" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="ward" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="unit" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="sample" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="nature" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="created_at" Type="Int64" />
-          <Property Name="created_by" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="process" Type="Int64" />
-        </EntityType>
-        <EntityType Name="SubTest">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="testid" Type="Int64" />
-          <Property Name="test" Type="String" />
-        </EntityType>
-        <EntityType Name="Pathogen">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -173,71 +127,71 @@
           <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
-      </Schema>
+        <EntityType Name="Pathogen">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Sample">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TestResult">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="test" Type="Int64" />
+          <Property Name="name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="result" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="gram" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="pathogen" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="antibiotics" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="reg_no" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="sex" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="age" Type="Int64" />
+          <Property Name="address" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="pincode" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="ward" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="unit" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="sample" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="nature" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="remark" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="created_at" Type="Int64" />
+          <Property Name="created_by" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="process" Type="Int64" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="role" Type="Int64" />
+          <Property Name="created_at" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="DatabaseModel.User">
-              <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="username" ColumnName="username" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="role" ColumnName="role" />
-                <ScalarProperty Name="created_at" ColumnName="created_at" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Samples">
-            <EntityTypeMapping TypeName="DatabaseModel.Sample">
-              <MappingFragment StoreEntitySet="Samples">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="BloodTests">
             <EntityTypeMapping TypeName="DatabaseModel.BloodTest">
               <MappingFragment StoreEntitySet="BloodTests">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Tests">
-            <EntityTypeMapping TypeName="DatabaseModel.Test">
-              <MappingFragment StoreEntitySet="Tests">
-                <ScalarProperty Name="process" ColumnName="process" />
-                <ScalarProperty Name="created_by" ColumnName="created_by" />
-                <ScalarProperty Name="created_at" ColumnName="created_at" />
-                <ScalarProperty Name="nature" ColumnName="nature" />
-                <ScalarProperty Name="sample" ColumnName="sample" />
-                <ScalarProperty Name="unit" ColumnName="unit" />
-                <ScalarProperty Name="ward" ColumnName="ward" />
-                <ScalarProperty Name="pincode" ColumnName="pincode" />
-                <ScalarProperty Name="address" ColumnName="address" />
-                <ScalarProperty Name="age" ColumnName="age" />
-                <ScalarProperty Name="sex" ColumnName="sex" />
-                <ScalarProperty Name="reg_no" ColumnName="reg_no" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SubTests">
-            <EntityTypeMapping TypeName="DatabaseModel.SubTest">
-              <MappingFragment StoreEntitySet="SubTests">
-                <ScalarProperty Name="test" ColumnName="test" />
-                <ScalarProperty Name="testid" ColumnName="testid" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Pathogens">
-            <EntityTypeMapping TypeName="DatabaseModel.Pathogen">
-              <MappingFragment StoreEntitySet="Pathogens">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
@@ -255,6 +209,67 @@
             <EntityTypeMapping TypeName="DatabaseModel.GramPositive">
               <MappingFragment StoreEntitySet="GramPositives">
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pathogens">
+            <EntityTypeMapping TypeName="DatabaseModel.Pathogen">
+              <MappingFragment StoreEntitySet="Pathogens">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Samples">
+            <EntityTypeMapping TypeName="DatabaseModel.Sample">
+              <MappingFragment StoreEntitySet="Samples">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestResults">
+            <EntityTypeMapping TypeName="DatabaseModel.TestResult">
+              <MappingFragment StoreEntitySet="TestResults">
+                <ScalarProperty Name="antibiotics" ColumnName="antibiotics" />
+                <ScalarProperty Name="pathogen" ColumnName="pathogen" />
+                <ScalarProperty Name="gram" ColumnName="gram" />
+                <ScalarProperty Name="result" ColumnName="result" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="test" ColumnName="test" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tests">
+            <EntityTypeMapping TypeName="DatabaseModel.Test">
+              <MappingFragment StoreEntitySet="Tests">
+                <ScalarProperty Name="process" ColumnName="process" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="nature" ColumnName="nature" />
+                <ScalarProperty Name="sample" ColumnName="sample" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="ward" ColumnName="ward" />
+                <ScalarProperty Name="pincode" ColumnName="pincode" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="reg_no" ColumnName="reg_no" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="DatabaseModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -10,9 +10,13 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class SubTest
+Partial Public Class TestResult
     Public Property id As Long
-    Public Property testid As Nullable(Of Long)
-    Public Property test As String
+    Public Property test As Nullable(Of Long)
+    Public Property name As String
+    Public Property result As String
+    Public Property gram As String
+    Public Property pathogen As String
+    Public Property antibiotics As String
 
 End Class

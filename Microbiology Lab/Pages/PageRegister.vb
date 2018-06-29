@@ -135,15 +135,18 @@
                               If row.Cells("col_check").Value = False Then
                                   Continue For
                               End If
-                              Dim subtest As New SubTest
-                              subtest.testid = Test.id
-                              subtest.test = row.Cells("col_name").Value
-                              Database.SubTests.Add(subtest)
+                              Dim tr As New TestResult
+                              tr.test = Test.id
+                              tr.name = row.Cells("col_name").Value
+                              Database.TestResults.Add(tr)
                           Next
                       End Sub)
-            Database.SaveChanges()
+        Else
+            Dim tr As New TestResult
+            tr.test = Test.id
+            Database.TestResults.Add(tr)
         End If
-
+        Database.SaveChanges()
         If My.Settings.ward.Contains(TxtWard.Text) = False Then
             My.Settings.ward.Add(TxtWard.Text)
         End If

@@ -23,7 +23,7 @@ Partial Class RemarkControl
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.KryptonGroupBox1 = New ComponentFactory.Krypton.Toolkit.KryptonGroupBox()
-        Me.TxtAddress = New ComponentFactory.Krypton.Toolkit.KryptonTextBox()
+        Me.TxtRemark = New ComponentFactory.Krypton.Toolkit.KryptonTextBox()
         Me.KryptonLabel4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         CType(Me.KryptonGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KryptonGroupBox1.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -40,21 +40,20 @@ Partial Class RemarkControl
         '
         'KryptonGroupBox1.Panel
         '
-        Me.KryptonGroupBox1.Panel.Controls.Add(Me.TxtAddress)
+        Me.KryptonGroupBox1.Panel.Controls.Add(Me.TxtRemark)
         Me.KryptonGroupBox1.Panel.Controls.Add(Me.KryptonLabel4)
         Me.KryptonGroupBox1.Size = New System.Drawing.Size(603, 144)
         Me.KryptonGroupBox1.TabIndex = 3
         Me.KryptonGroupBox1.Values.Heading = "Remark"
         '
-        'TxtAddress
+        'TxtRemark
         '
-        Me.TxtAddress.Location = New System.Drawing.Point(13, 40)
-        Me.TxtAddress.Margin = New System.Windows.Forms.Padding(3, 3, 3, 10)
-        Me.TxtAddress.Multiline = True
-        Me.TxtAddress.Name = "TxtAddress"
-        Me.TxtAddress.ReadOnly = True
-        Me.TxtAddress.Size = New System.Drawing.Size(497, 59)
-        Me.TxtAddress.TabIndex = 11
+        Me.TxtRemark.Location = New System.Drawing.Point(13, 40)
+        Me.TxtRemark.Margin = New System.Windows.Forms.Padding(3, 3, 3, 10)
+        Me.TxtRemark.Multiline = True
+        Me.TxtRemark.Name = "TxtRemark"
+        Me.TxtRemark.Size = New System.Drawing.Size(497, 59)
+        Me.TxtRemark.TabIndex = 11
         '
         'KryptonLabel4
         '
@@ -82,6 +81,6 @@ Partial Class RemarkControl
     End Sub
 
     Friend WithEvents KryptonGroupBox1 As ComponentFactory.Krypton.Toolkit.KryptonGroupBox
-    Friend WithEvents TxtAddress As ComponentFactory.Krypton.Toolkit.KryptonTextBox
+    Friend WithEvents TxtRemark As ComponentFactory.Krypton.Toolkit.KryptonTextBox
     Friend WithEvents KryptonLabel4 As ComponentFactory.Krypton.Toolkit.KryptonLabel
 End Class

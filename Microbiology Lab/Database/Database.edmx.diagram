@@ -5,14 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="acadad069e864c03aa91fdc1e6231a2c" Name="Diagram1">
-        <EntityTypeShape EntityType="DatabaseModel.User" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.Sample" Width="1.5" PointX="3.375" PointY="0.75" />
-        <EntityTypeShape EntityType="DatabaseModel.BloodTest" Width="1.5" PointX="0.75" PointY="3.75" />
-        <EntityTypeShape EntityType="DatabaseModel.Test" Width="1.5" PointX="3.375" PointY="3.75" />
-        <EntityTypeShape EntityType="DatabaseModel.SubTest" Width="1.5" PointX="5.375" PointY="0.75" />
-        <EntityTypeShape EntityType="DatabaseModel.Pathogen" Width="1.5" PointX="5.375" PointY="3.75" />
-        <EntityTypeShape EntityType="DatabaseModel.GramNegative" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="DatabaseModel.GramPositive" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DatabaseModel.BloodTest" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.GramNegative" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.GramPositive" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DatabaseModel.Pathogen" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DatabaseModel.Sample" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.TestResult" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DatabaseModel.Test" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.User" Width="1.5" PointX="0.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,4 +1,4 @@
-﻿Public Class FormUpdate
+﻿Public Class FormUpdateBlood
     Private test As Test
     Private testresult As TestResult
     Public Sub New(t As Test)

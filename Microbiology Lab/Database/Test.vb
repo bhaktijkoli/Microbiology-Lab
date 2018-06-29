@@ -22,6 +22,7 @@ Partial Public Class Test
     Public Property unit As String
     Public Property sample As String
     Public Property nature As String
+    Public Property remark As String
     Public Property created_at As Nullable(Of Long)
     Public Property created_by As String
     Public Property process As Nullable(Of Long)

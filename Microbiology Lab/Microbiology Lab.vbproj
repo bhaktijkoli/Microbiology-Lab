@@ -95,6 +95,10 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -180,10 +184,10 @@
     <Compile Include="Database\Sample.vb">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
-    <Compile Include="Database\SubTest.vb">
+    <Compile Include="Database\Test.vb">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
-    <Compile Include="Database\Test.vb">
+    <Compile Include="Database\TestResult.vb">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\User.vb">
@@ -212,6 +216,12 @@
       <DependentUpon>FormMain.vb</DependentUpon>
     </Compile>
     <Compile Include="FormMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormUpdateBlood.Designer.vb">
+      <DependentUpon>FormUpdateBlood.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormUpdateBlood.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormUpdate.Designer.vb">
@@ -295,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormUpdateBlood.resx">
+      <DependentUpon>FormUpdateBlood.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormUpdate.resx">
       <DependentUpon>FormUpdate.vb</DependentUpon>
